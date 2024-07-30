@@ -3,13 +3,14 @@ package routes
 import (
 	"net/http"
 
-	"github.com/ibilalkayy/htmx-projects/crud-project/internal/handlers"
+	"github.com/ibilalkayy/htmx-projects/crud-project/internal/handler"
 )
 
 func Routes() {
-	http.HandleFunc("GET /", handlers.Home)
-	http.HandleFunc("GET /create", handlers.Create)
-	http.HandleFunc("GET /view", handlers.View)
-	http.HandleFunc("GET /update", handlers.Update)
-	http.HandleFunc("GET /delete", handlers.Delete)
+	tmpl := handler.Handler{}
+	http.HandleFunc("GET /", tmpl.Deps.Home)
+	http.HandleFunc("GET /create", tmpl.Deps.Create)
+	http.HandleFunc("GET /view", tmpl.Deps.View)
+	http.HandleFunc("GET /update", tmpl.Deps.Update)
+	http.HandleFunc("GET /delete", tmpl.Deps.Delete)
 }

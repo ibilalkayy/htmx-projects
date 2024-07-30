@@ -1,4 +1,4 @@
-package handlers
+package view
 
 import (
 	"net/http"
@@ -6,8 +6,8 @@ import (
 	"github.com/ibilalkayy/htmx-projects/crud-project/internal/templates"
 )
 
-func Delete(w http.ResponseWriter, r *http.Request) {
-	err := templates.DeleteTmpl.Execute(w, nil)
+func (MyTemplate) View(w http.ResponseWriter, r *http.Request) {
+	err := templates.ViewTmpl.Execute(w, nil)
 	if err != nil {
 		http.Error(w, "Error rendering template", http.StatusInternalServerError)
 		return

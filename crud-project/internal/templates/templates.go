@@ -1,6 +1,6 @@
 package templates
 
-import "text/template"
+import "html/template"
 
 func MakeTemplate(path string) *template.Template {
 	files := []string{path, "static/base.html"}
