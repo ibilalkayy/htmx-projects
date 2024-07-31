@@ -2,4 +2,25 @@
 
 {{define "title" }} Create {{end}}
 
-{{define "body" }} <h1> This is the create page </h1> {{end}}
+{{define "body" }}
+
+    <div class="grow-[14.5]"></div>
+
+    <form>
+        <div class="flex flex-col items-center">
+            <p class="text-white text-5xl text-center mt-2"> Insert your values </p>
+            
+            <label for="name" class="text-white text-4xl mb-4 mt-6 w-4/5"> Project name </label>
+            <input type="text" name="name" class="rounded-md h-12 mb-6 w-4/5"/>
+            
+            <label for="description" class="text-white text-4xl mb-4 w-4/5"> Project description </label>
+            <textarea name="description" class="rounded-md h-60 w-4/5"> </textarea>
+        </div>
+        <button type="button" class="rounded-md text-black border-white border-2 px-5 py-2 text-2xl bg-white ml-48 mt-10"> Create </button>
+    </form>
+
+    <div class="grow-[14.5]"></div>
+
+    <p class="text-white text-2xl rounded-md bg-lime-700 w-96 text-center ml-48 mb-16"> Project is successfully {message}  </p>
+
+{{end}}
